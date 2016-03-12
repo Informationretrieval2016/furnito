@@ -5,7 +5,52 @@ class Crawler:
     def __init__(self):
         self.base_url = config.base_url
         self.depth = config.depth
-    
+        
+     def get_main_categories(self):
+        '''
+        @usage: get categories of furnitures and make new folder if necessary
+        @return: null
+        '''
+        try:
+            html = urlopen(self.base_url)
+        except HTTPError as e:
+            log.error_log("%s unreachable",(base_url))
+        
+        soup = BeautifulSoup(html.read(),"lxml")
+        my_i = soup.findAll("i",{"class": "expand-open-close"})
+        for i in my_i:
+            li = i.parent
+            a = li.findAll("a")[0]
+            name = a.get_text()
+            url = a['href']
+            pathname = "data/" + name
+            if not os.path.exists(pathname):
+                os.makedirs(pathname)
+            get_sub_categories(url,pathname)
+
+            
+
+    def get_sub_categories(self, url, pathname):
+        '''
+        @usage: get subcategories of furnituresand make new folder if necessary
+        @return: null
+        '''
+        try:
+            html = urlopen(url)
+        except HTTPError as e:
+            log.error_log("%s unreachable",(url))
+            
+        soup = BeautifulSoup(html.read(),"lxml")
+        div = soup.find("div",{"id" : "categories-mod"})
+        my_a = div.findAll("a")
+        for a in my_a:
+            name = a["title"]
+            subpathname = pathname + "/" + name
+            if not os.path.exists(subpathname):
+                os.makedirs(subpathname)
+
+            
+
     def get_result(self, url):
         '''
         @usage: construct a furniture instance and write into local storage
