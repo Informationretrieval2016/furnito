@@ -65,18 +65,21 @@ class Crawler:
         furniture_page = requests.get(url)
         tree = html.fromstring(furniture_page.text)
         #extract url of all reviews
-        reviewpage_url = tree.xpath('//span[@class="overall-msg"]/a/@href')[0]
-        review_page = requests.get(reviewpage_url)
-        tree = html.fromstring(review_page.text)
-        #extract all reviews, first get number of review pages
         try:
-            page_num = tree.xpath('//a[@class="firstChild"][last()]/text()')[0]
+            reviewpage_url = tree.xpath('//span[@class="overall-msg"]/a/@href')[0]
+            review_page = requests.get(reviewpage_url)
+            tree = html.fromstring(review_page.text)
+        #extract all reviews, first get number of review pages
+            try:
+                page_num = tree.xpath('//a[@class="firstChild"][last()]/text()')[0]
+            except IndexError as e:
+                page_num = 1
+            if page_num == 1:
+                reviews = self.extract_reviews(reviewpage_url)
+            else:
+                reviews = self.extract_reviews(reviewpage_url, multi_page = True, max_page = int(page_num))
         except IndexError as e:
-            page_num = 1
-        if page_num == 1:
-            reviews = self.extract_reviews(reviewpage_url)
-        else:
-            reviews = self.extract_reviews(reviewpage_url, multi_page = True, max_page = int(page_num))
+            reviews = ['failed to get review']
         return reviews
 
     def extract_reviews(self, url, multi_page = False, max_page = None):

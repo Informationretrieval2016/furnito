@@ -25,10 +25,12 @@ class URL_Manager:
         @arg: list of url discovered from one furniture page
         '''
         #remove dulpilicate urls that not appear in both current list and history list
-        diff = set(self.url_list).difference(self.processing)
-        diff = set(self.processed).difference(diff)
-        self.processing.extend(diff)
-        print self.processing
+        if isinstance(url_list, list):
+            for url in url_list:
+                if url not in self.processing and url not in self.processed:
+                    self.processing.extend(url_list)
+        else:
+            self.processing.append(url_list)
         return self.processing
 
     def url_remove(self, url):
