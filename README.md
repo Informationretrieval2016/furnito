@@ -11,8 +11,7 @@
 + [Ranking](#ranking)
 + [Human-Computation](#human-computation)
 + [Evaluation](#evaluation)
-+ [Furture]
-+ [Human computation](#Human compuation)
++ [Furture](#future)
 
 <h2 id='intro'>Intro</h2>
 
@@ -97,4 +96,39 @@ We also tryied to rank documents by asesss the most likely relevant document acc
 
 We have over 1000 documents, created 50 user queries. By applying different ranking methods (simple vsm, tfidf vsm, pln vsm, bm25, unigram pbm, query likelihood pbm) into the retrieval system, we extract top 20 documents for each query and each algorithm, formed into a big evaluation set. This method is named *Pooling* method.
 
-<h2 id='Human compuation'>Human compuation</h2>
+<h2 id='future'>Future</h2>
+
+<h2 id='appendix'>Appendix</h2>
+
+<h3 id='appendix1'>Appendix 1 Evaluation Queries</h3>
+
+Chair Related:
+
+| ID   | Example query                |
+| ---- | ---------------------------- |
+| 1    | chair                        |
+| 2    | chair blue                   |
+| 3    | chair blue wood              |
+| 4    | chair modern                 |
+| 5    | chair leather                |
+| 6    | chair dining wood            |
+| 7    | chair fantastic comfortable  |
+| 8    | chair high back good looking |
+| 9    | chair stable                 |
+| 10   | chair iron addition          |
+
+Bed Related:
+
+| id   |      |
+| ---- | ---- |
+|      |      |
+|      |      |
+|      |      |
+|      |      |
+|      |      |
+|      |      |
+|      |      |
+|      |      |
+|      |      |
+|      |      |
+
