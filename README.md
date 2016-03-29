@@ -118,33 +118,15 @@ We have over 1000 documents, created 50 user queries. By applying different rank
 
 <h3 id='appendix1'>Appendix 1 Evaluation Queries</h3>
 
-Chair Related:
-
-| ID   | Example query                |
-| ---- | ---------------------------- |
-| 1    | chair                        |
-| 2    | chair blue                   |
-| 3    | chair blue wood              |
-| 4    | chair modern                 |
-| 5    | chair leather                |
-| 6    | chair dining wood            |
-| 7    | chair fantastic comfortable  |
-| 8    | chair high back good looking |
-| 9    | chair stable                 |
-| 10   | chair iron addition          |
-
-Bed Related:
-
-| id   |      |
-| ---- | ---- |
-|      |      |
-|      |      |
-|      |      |
-|      |      |
-|      |      |
-|      |      |
-|      |      |
-|      |      |
-|      |      |
-|      |      |
-
+| ID   | Set1                         | set2                      | set3                | set4                  | set5                      |
+| ---- | ---------------------------- | ------------------------- | ------------------- | --------------------- | ------------------------- |
+| 1    | chair                        | bookcase                  | table               | sofa                  | cabinet                   |
+| 2    | chair blue                   | bookcase standalone       | table coffee        | sofa comfortable      | cabinet glass             |
+| 3    | chair blue wood              | bookcase open shelves     | table drawer        | sofa classic          | cabinet classic           |
+| 4    | chair modern                 | bookcase modern           | table gorgeous      | sofa high back        | cabinet kitchen           |
+| 5    | chair leather                | bookcase vertical storage | table unique design | sofa business black   | cabinet two-door          |
+| 6    | chair dining wood            | bookcase real wood        | table modern        | sofa leather          | cabinet white useful      |
+| 7    | chair fantastic comfortable  | bookcase good quality     | table living room   | sofa living room      | cabinet good quality      |
+| 8    | chair high back good looking | bookcase cute             | table storage       | sofa red leather      | cabinet dishes            |
+| 9    | chair stable                 | bookcase middle size      | table black tea     | sofa firm             | cabinet traditional style |
+| 10   | chair quality                | bookcase solid            | table wood large    | sofa gray inexpensive | cabinet dinnerware        |
