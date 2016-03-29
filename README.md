@@ -11,6 +11,7 @@
 + [Ranking](#ranking)
 + [Evaluation](#evaluation)
 + [Furture]
++ [Human computation](#Human compuation)
 
 <h2 id='intro'>Intro</h2>
 
@@ -92,3 +93,5 @@ We also tryied to rank documents by asesss the most likely relevant document acc
 <h2 id='evaluation'>Evaluation</h2>
 
 We have over 1000 documents, created 50 user queries. By applying different ranking methods (simple vsm, tfidf vsm, pln vsm, bm25, unigram pbm, query likelihood pbm) into the retrieval system, we extract top 20 documents for each query and each algorithm, formed into a big evaluation set. This method is named *Pooling* method.
+
+<h2 id='Human compuation'>Human compuation</h2>
