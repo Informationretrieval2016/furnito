@@ -15,6 +15,8 @@
 
 <h2 id='intro'>Intro</h2>
 
+*Furnito* is a web application that acts as an online interior decorator. It help users decorate their homes by letting them match their type of furniture which they already have with new types of furniture. This project idea description document will elaborate on the technical aspects of the system, like a module description and a system evaluation (metrics) description. Furthermore, it will elaborate on the social aspects of the system, like a stakeholder description and a business case description. 
+
 <h2 id='business'>Business</h2>
 Business process model 
 ![BPMN model](https://github.com/Informationretrieval2016/furnito/blob/master/img/Schermafbeelding%202016-03-18%20om%2011.35.29.png "BPMN model")
