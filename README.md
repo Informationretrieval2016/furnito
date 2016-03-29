@@ -98,3 +98,15 @@ We also tryied to rank documents by asesss the most likely relevant document acc
 We have over 1000 documents, created 50 user queries. By applying different ranking methods (simple vsm, tfidf vsm, pln vsm, bm25, unigram pbm, query likelihood pbm) into the retrieval system, we extract top 20 documents for each query and each algorithm, formed into a big evaluation set. This method is named *Pooling* method.
 
 <h2 id='Human compuation'>Human compuation</h2>
+
+### Human computational model
+For the human computation, Crowdflower is used. The workforce is asked to match furniture together, according to their taste. Because of the large amount of the data in the final product (we now already have 1000 pieces of furniture), the necessary amount of questions could be millions. To reduce the amount of questions necessary some measures have been taken. First of all, it is assumed that people only want to match furniture within a certain room. So, only furniture within a bathroom, or only furniture within in living room. Secondly, it is assumed that people do not want to match the same type of furniture with each other. So, people do not want to match a chair with a chair. Thirdly, the matching on crowdflower is done pairwise instead of groupwise. In other words, not one chair with one sofa, but one chair with 20 other furniture. 
+
+### Relevance
+How does a certain piece of furniture become relevant to another piece of furniture? One person might say they think a chair fits together wit a table, while another person might dislike this match. This is why probabilistic models should be used in the final project. For now, we assume that if 10 people say they think two items fit together, it becomes a significant match. The, the more votes a certain combination gets, the more relevant it becomes. 
+
+To make the matching a more personal experience, workers are asked to submit their age and gender. The user of Furnito can than submit his age and gender, and than get relevant furniture based on these data. This is done because it is assumed that women and men of different ages have a different taste. Due to the scope of this project, this is something that can be implemented in the future. 
+
+### The question
+So, how does a question look like on crowdflower? The worker is asked to submit their age and gender, after that the questioning starts. A question consists of the following question:
+“Which 5 furniture doe you think fits together in one room? Choose your 5 most favorite furniture.” The worker than chooses his most favorite furniture and moves on to the next question. 
