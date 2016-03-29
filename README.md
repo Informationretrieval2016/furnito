@@ -9,6 +9,7 @@
 + [Tokenize]
 + [Indexing](#indexing)
 + [Ranking](#ranking)
++ [Human-Computation](#human-computation)
 + [Evaluation](#evaluation)
 + [Furture]
 
@@ -87,7 +88,7 @@ We also tryied to rank documents by asesss the most likely relevant document acc
 
 <h3 id='l2r'>Learning to Rank</h3>
 
-
+<h2 id='human-computation'>Human-Computation</h2>
 
 <h2 id='evaluation'>Evaluation</h2>
 
