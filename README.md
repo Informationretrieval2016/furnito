@@ -109,9 +109,40 @@ So, how does a question look like on crowdflower? The worker is asked to submit 
 
 <h2 id='evaluation'>Evaluation</h2>
 
-We have over 1000 documents, created 50 user queries. By applying different ranking methods (simple vsm, tfidf vsm, pln vsm, bm25, unigram pbm, query likelihood pbm) into the retrieval system, we extract top 20 documents for each query and each algorithm, formed into a big evaluation set. This method is named *Pooling* method.
+IR provided us various retrieval metrics and by applying different retrieval techniques to Furnito, we are able to denote which model has the best performance. Our evaluation strategy includes:
 
-<<<<<<< HEAD
+1. Enough relevant documents.
+2. Capture the perceived utility by users.
+3. Completeness and minimum human work.
+4. Resuable test set.
+
+By perform a unbias and fair evaluation, we divided the evaluation task into these small tasks.
+
+1. Choose a diverse set of ranking models, for example, `simple vsm`, `tf-idf_vsm`, `pln_vsm`, `simple_pbm`, `query_likely_pbm`, `bm25`.
+2. Have each model return top-20 documents based on each query.
+3. Combine all top-20 sets to form a *pool*.
+4. Record relevant result including Precision, Recall,  Precision at 10, excusion time.
+5. Process another query.
+6. Compute MAP score.
+
+###Excursion Time
+
+| term                      | simple | tfidf | pln  | bm25 | unigram | querylikely |
+| ------------------------- | ------ | ----- | ---- | ---- | ------- | ----------- |
+| chair                     | 1.95   | 3.14  | 3.21 | 2.54 |         |             |
+| bookcase vertical storage | 2.14   | 3.08  | 3.37 | 2.89 |         |             |
+| chair dining wood         | 2.71   | 4.62  | 4.50 | 3.34 |         |             |
+| bookcase quality          | 2.06   | 2.04  | 2.21 | 1.90 |         |             |
+| table coffee              | 2.13   | 2.55  | 2.47 | 2.03 |         |             |
+| table wood black          | 2.79   | 3.94  | 4.38 | 3.36 |         |             |
+| sofa leather              | 1.26   | 2.57  | 2.02 | 1.70 |         |             |
+| sofa firm black           | 1.39   | 3.73  | 3.50 | 2.98 |         |             |
+| cabinet glass             | 1.11   | 2.04  | 2.55 | 2.19 |         |             |
+| cabinet classic dishes    | 1.85   | 2.70  | 2.79 | 2.36 |         |             |
+| *(seconds)*               |        |       |      |      |         |             |
+
+
+
 <h2 id='future'>Future</h2>
 
 <h2 id='appendix'>Appendix</h2>
