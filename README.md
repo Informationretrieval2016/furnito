@@ -21,6 +21,9 @@
 Business process model 
 ![BPMN model](https://github.com/Informationretrieval2016/furnito/blob/master/img/Schermafbeelding%202016-03-18%20om%2011.35.29.png "BPMN model")
 
+Business model canvas
+![Business model canvas](https://github.com/Informationretrieval2016/furnito/blob/master/img/Schermafbeelding%202016-03-30%20om%2017.43.48.png "Business model canvas")
+
 <h2 id='interface'>Interface</h2>
 
 <h2 id='crawler'>Crawler</h2>

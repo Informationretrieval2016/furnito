@@ -16,7 +16,7 @@ class VSM:
         self.pl = {}
         self.hash_dict = self.ii.posting_list()
         self.csv_path = config.vector_space_path
-        # self.build_vector_space()
+        #self.build_vector_space()
 
     def get_termid(self, query_list):
         '''
@@ -76,9 +76,12 @@ class VSM:
             #construct vector space
             for term in content.split():
                 #get term_id by term
-                term_id = self.hash_dict.keys()[self.hash_dict.values().index(term)]
-                #add current dataframe
-                df.xs(current_doc, copy = False)[term_id] += 1
+                try:
+                    term_id = self.hash_dict.keys()[self.hash_dict.values().index(term)]
+                    #add current dataframe
+                    df.xs(current_doc, copy = False)[term_id] += 1
+                except:
+                    pass
         #insert a line into matrix indicate document frequency
         document_frequency = []
         for i in range(0, len(self.hash_dict)):
@@ -240,10 +243,3 @@ class VSM:
         '''
         idf = np.log2(float(len(self.fr.load_file_names()) + 1)/document_frequency)
         return idf
-
-
-
-
-
-vsm = VSM()
-print vsm.bm25_vector_space(['chair','desk'])
