@@ -31,7 +31,7 @@ def evaluate(model_name, query_list):
     res_dict = sorted(res_dict.items(), key = operator.itemgetter(1), reverse = True)
     return res_dict[0:20], stop - start
 
-query_term = ['cabinet', 'classic', 'dishes']
+query_term = ['chair']
 simple_dict, simple_time = evaluate("simple", query_term)
 print "simple vsm:" + str(simple_time)
 tfidf_dict, tfidf_time = evaluate("tfidf", query_term)
@@ -41,7 +41,7 @@ print "pln time:" + str(pln_time)
 bm25_dict, bm25_time = evaluate("bm25", query_term)
 print "bm25:" + str(bm25_time)
 res = pd.DataFrame({'simple': simple_dict, 'tfidf': tfidf_dict, 'pln': pln_dict, 'bm25': bm25_dict})
-res.to_csv("/home/wb/Documents/e10.csv", sep = ",")
+res.to_csv("/home/wb/Documents/evaluation_data/e1.csv", sep = ",")
 
 
 

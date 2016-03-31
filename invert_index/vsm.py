@@ -4,6 +4,7 @@ import config
 import json
 import numpy as np
 import pandas as pd
+import math
 from file_reader import File_Reader
 from file_writer import File_Writer
 
@@ -182,7 +183,10 @@ class VSM:
             doc_vector = np.array(doc_vector)
             doc_term = (np.log10(1 + np.log10(1 + doc_vector)))/(doc_length[current_file]/avg_doc_length)
             score = np.sum(query_vector * (doc_term*idf))
-            score_dict[current_file] = score
+            if math.isnan(score):
+                pass
+            else:
+                score_dict[current_file] = score
         return score_dict
 
 
