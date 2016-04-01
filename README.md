@@ -126,7 +126,7 @@ By perform a unbias and fair evaluation, we divided the evaluation task into the
 1. Choose a diverse set of ranking models, for example, `simple vsm`, `tf-idf_vsm`, `pln_vsm`, `simple_pbm`, `query_likely_pbm`, `bm25`.
 2. Have each model return top-10 documents based on each query.
 3. Combine all top-10 sets to form a *pool*.
-4. Record relevant result including Precision, Recall,  Precision at 10, excusion time.
+4. Record relevant result including Precision, Recall,  Precision at 10, excursion time.
 5. Process another query.
 6. Compute MAP score.
 
