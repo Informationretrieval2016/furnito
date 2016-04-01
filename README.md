@@ -163,11 +163,14 @@ Visualize
 
 For evaluating our system we extracted the top 10 ranking for the queries `[chair]`,`[bookcase open shelves]`, and `[cabinet kitchen]`. The query results for each query of all the 6 different models were combined in a pooling set, containing all the unique query results. The relevance of each of the results was then judged manually by human assessors and the irrelevant documents were cross-referenced by their occurrence in the original query result per model. The precision per model was counted after the evaluation and are presented below.
 
+TODO: EXPAND
+
 | query                         | simple | tfidf | pln  | bm25 | unigram | querylikely |
 | ----------------------------- | ------ | ----- | ---- | ---- | ------- | ----------- |
 | chair                         | 0.7    | 0.7   | 0.8  | 0.8  | 0.7     | 0.9         |
 | bookcase open shelves         | 0.9    | 0.9   | 1    | 0.9  | 0.9     | 0.8         |
 | cabinet kitchen               | 0.8    | 1     | 0.9  |   1  |   1     |    0.8      |
+*Table showing the P@10 for the different models per query*
 
 <h2 id='future'>Future</h2>
 
