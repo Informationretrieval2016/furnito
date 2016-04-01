@@ -130,37 +130,31 @@ By perform a unbias and fair evaluation, we divided the evaluation task into the
 
 ###Excursion Time
 
-| term                      | simple | tfidf | pln  | bm25 | unigram | querylikely |
-| ------------------------- | ------ | ----- | ---- | ---- | ------- | ----------- |
-| chair                     | 1.95   | 3.14  | 3.21 | 2.54 |         |             |
-| bookcase vertical storage | 2.14   | 3.08  | 3.37 | 2.89 |         |             |
-| chair dining wood         | 2.71   | 4.62  | 4.50 | 3.34 |         |             |
-| bookcase quality          | 2.06   | 2.04  | 2.21 | 1.90 |         |             |
-| table coffee              | 2.13   | 2.55  | 2.47 | 2.03 |         |             |
-| table wood black          | 2.79   | 3.94  | 4.38 | 3.36 |         |             |
-| sofa leather              | 1.26   | 2.57  | 2.02 | 1.70 |         |             |
-| sofa firm black           | 1.39   | 3.73  | 3.50 | 2.98 |         |             |
-| cabinet glass             | 1.11   | 2.04  | 2.55 | 2.19 |         |             |
-| cabinet classic dishes    | 1.85   | 2.70  | 2.79 | 2.36 |         |             |
-| *(seconds)*               |        |       |      |      |         |             |
+| term                          | simple | tfidf | pln  | bm25 | unigram | querylikely |
+| ----------------------------- | ------ | ----- | ---- | ---- | ------- | ----------- |
+| chair                         | 1.47   | 2.40  | 2.06 | 1.62 | 0.7     | 1.51        |
+| bookcase vertical storage     | 1.55   | 2.57  | 2.56 | 1.95 | 1.06    | 4.77        |
+| chair dining wood             | 2.51   | 4.86  | 3.53 | 1.82 | 0.27    | 3.89        |
+| bookcase quality              | 1.12   | 0.97  | 0.36 | 0.30 | 0.23    | 1.48        |
+| table coffee                  | 1.33   | 2.08  | 1.34 | 0.33 | 0.17    | 1.46        |
+| table wood black              | 3.23   | 5.10  | 4.84 | 3.83 | 1.59    | 5.09        |
+| sofa leather                  | 1.34   | 2.27  | 2.14 | 1.85 | 0.55    | 2.43        |
+| sofa firm black               | 1.24   | 2.53  | 2.47 | 1.70 | 0.26    | 5.68        |
+| cabinet glass                 | 0.73   | 1.25  | 0.66 | 0.90 | 1.30    | 1.89        |
+| cabinet classic dishes        | 1.41   | 2.03  | 1.93 | 1.44 | 0.34    | 4.59        |
+| chair high black good looking | 3.38   | 6.01  | 5.00 | 3.07 | 1.51    | 7.08        |
+| chair fantastic comfortable   | 1.85   | 3.37  | 2.95 | 2.12 | 0.80    | 5.13        |
+| bookcase open shelves         | 1.87   | 2.97  | 2.56 | 2.28 | 0.67    | 4.06        |
+| bookcase modern               | 2.33   | 3.49  | 3.53 | 3.54 | 0.75    | 1.78        |
+| table gorgeous                | 1.44   | 0.88  | 0.63 | 0.51 | 0.31    | 1.00        |
+| table black tea               | 1.97   | 3.08  | 3.11 | 2.36 | 0.51    | 5.34        |
+| sofa business black           | 2.61   | 2.70  | 2.65 | 2.17 | 0.51    | 6.44        |
+| sofa comfortable              | 1.16   | 2.61  | 2.23 | 1.79 | 0.40    | 1.71        |
+| cabinet kitchen               | 0.90   | 1.99  | 1.89 | 1.35 | 0.15    | 1.92        |
+| cabinet dinerware             | 0.74   | 1.90  | 1.13 | 0.85 | 0.12    | 1.35        |
 
-
+*seconds*
 
 <h2 id='future'>Future</h2>
 
-<h2 id='appendix'>Appendix</h2>
-
-<h3 id='appendix1'>Appendix 1 Evaluation Queries</h3>
-
-| ID   | Set1                         | set2                      | set3                | set4                  | set5                      |
-| ---- | ---------------------------- | ------------------------- | ------------------- | --------------------- | ------------------------- |
-| 1    | chair                        | bookcase                  | table               | sofa                  | cabinet                   |
-| 2    | chair blue                   | bookcase standalone       | table coffee        | sofa comfortable      | cabinet glass             |
-| 3    | chair blue wood              | bookcase open shelves     | table drawer        | sofa classic          | cabinet classic           |
-| 4    | chair modern                 | bookcase modern           | table gorgeous      | sofa high back        | cabinet kitchen           |
-| 5    | chair leather                | bookcase vertical storage | table unique design | sofa business black   | cabinet two-door          |
-| 6    | chair dining wood            | bookcase real wood        | table modern        | sofa leather          | cabinet white useful      |
-| 7    | chair fantastic comfortable  | bookcase good quality     | table living room   | sofa living room      | cabinet good quality      |
-| 8    | chair high back good looking | bookcase cute             | table storage       | sofa red leather      | cabinet dishes            |
-| 9    | chair stable                 | bookcase middle size      | table black tea     | sofa firm             | cabinet traditional style |
-| 10   | chair quality                | bookcase solid            | table wood large    | sofa gray inexpensive | cabinet dinnerware        |
+<h2 id='reference'>Reference</h2>
