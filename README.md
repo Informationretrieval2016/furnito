@@ -157,6 +157,10 @@ By perform a unbias and fair evaluation, we divided the evaluation task into the
 
 *seconds*
 
+Visualize
+
+![evaluation time](img/excursion_time.png)
+
 <h2 id='future'>Future</h2>
 
 <h2 id='reference'>Reference</h2>
