@@ -173,6 +173,7 @@ RECALL (?)
 | chair                         | 0.7    | 0.7   | 0.8  | 0.8  | 0.7     | 0.9         |
 | bookcase open shelves         | 0.9    | 0.9   | 1    | 0.9  | 0.9     | 0.8         |
 | cabinet kitchen               | 0.8    | 1     | 0.9  |   1  |   1     |    0.8      |
+| Mean Average Precision @ 10   |0.8     |0.87   |0.9   |0.9   |0.87     |0.83         |
 *Table showing the P@10 precision metric for the different models per query*
 
 <h2 id='future'>Future</h2>
