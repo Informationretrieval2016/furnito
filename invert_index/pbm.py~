@@ -81,16 +81,17 @@ class PBM:
 			collection.extend(open(document).read().split(' '))
 		return collection
 
-	def BIM_rank(self,query_list):
-		ranks = []
-		document_list = self.get_documents()
-		for document in document_list:
-			data = open(document).read().split(' ')
-			x = list(set(query_list).intersection(set(data)))
-			if len(x) == 0:
-				ranks.append(1.0)
-			else:
-				scores = self.get_score(x,len(document_list))
-				ranks.append(np.prod(scores))
-			document_with_rank = zip(document_list,ranks)
-		return sorted(document_with_rank, key=lambda s : s[1], reverse = True)
+    def BIM_rank(self,query_list):
+        ranks = []
+        docuemnt_with_rank = []
+        document_list = self.get_documents()
+			for document in document_list:
+				data = open(document).read().split(' ')
+				x = list(set(query_list).intersection(set(data)))
+				if len(x) == 0:
+					ranks.append(1.0)
+				else:
+					scores = self.get_score(x,len(document_list))
+					ranks.append(np.prod(scores))
+				document_with_rank = zip(document_list,ranks)
+		return sorted(document_with_rank, key = lambda s:s[1], reverse = True)
