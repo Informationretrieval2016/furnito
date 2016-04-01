@@ -164,3 +164,7 @@ Visualize
 <h2 id='future'>Future</h2>
 
 <h2 id='reference'>Reference</h2>
+
+1.Singhal A, Buckley C, Mitra M. Pivoted document length normalization[C]//Proceedings of the 19th annual international ACM SIGIR conference on Research and development in information retrieval. ACM, 1996: 21-29.
+
+2.Robertson S E, Walker S. Some simple effective approximations to the 2-poisson model for probabilistic weighted retrieval[C]//Proceedings of the 17th annual international ACM SIGIR conference on Research and development in information retrieval. Springer-Verlag New York, Inc., 1994: 232-241.
