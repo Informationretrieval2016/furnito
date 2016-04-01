@@ -97,4 +97,3 @@ class PBM:
 
 p = PBM()
 ranks = p.log_prob(['chair'], 0.5)
-print ranks

@@ -6,7 +6,7 @@
 + [Business](#business)
 + [Inrerface](#interface)
 + [Crawler](#crawler)
-+ [Tokenize]
++ [Tokenize and Preprocessing](#tokenize)
 + [Indexing](#indexing)
 + [Ranking](#ranking)
 + [Human-Computation](#human-computation)
@@ -41,7 +41,9 @@ The goal of our web crawler is to access data *quickly*, *efficiently* and as ma
 
 Use `config.py` to config your personal settings, run `start.py` to start crawl. Library dependency: `lxml` and `requests`.
 
-<h2 id='tokenize'>Tokenize</h2>
+<h2 id='tokenize'>Tokenize and Preprocessing</h2>
+
+It helps in preprocessing of the string by tokenization, stemming. It helps in making the text precise and meaningful so that it can be easily used for indexing. Tokenization helps in the breaking of a string into tokens and stemming helps in the reduction of the words into their root words so that indexing becomes easier.
 
 <h2 id='indexing'>Indexing</h2>
 
@@ -65,7 +67,7 @@ As shown in table, we gave each term an *index*, and different terms a sorted al
 5. Construct **Dictionary** by adding a int index, store in memory.
 6. Construct **Pooling List** by replace all terms by index defined before, export to local storage.
 
-Finall Inverted Index looks like this:
+Finally Inverted Index looks like this:
 
 ![posting-list](img/posting_list.png)
 
