@@ -4,14 +4,14 @@
 
 + [Intro](#intro)
 + [Business](#business)
-+ [Inrerface](#interface)
++ [Interface](#interface)
 + [Crawler](#crawler)
 + [Tokenize and Preprocessing](#tokenize)
 + [Indexing](#indexing)
 + [Ranking](#ranking)
 + [Human-Computation](#human-computation)
 + [Evaluation](#evaluation)
-+ [Furture](#future)
++ [Future](#future)
 
 <h2 id='intro'>Intro</h2>
 
@@ -87,11 +87,11 @@ As user send a query, system map query into term id from *dictionary* and then f
 
 <h3 id='pbm'>Probabilistic Model</h3>
 
-We also tryied to rank documents by asesss the most likely relevant document according to user query.  Based on probabilistic basis, we implemented 2 models:
+We also tried to rank documents by asessing the most likely relevant document according to the user query.  Based on probabilistic basis, we implemented 2 models:
 
-`unigram_probability_model`, this is the most simple probabilistic model that use language model to model user query text. Statisticsl language model is a probability distribution over word sequence. 
+The `unigram_probability_model`, this is the most simple probabilistic model that use language model to model user query text. Statisticsl language model is a probability distribution over word sequence. 
 
-`query_likely_model`, we use the whole furniture data as a reference language model, and by using *linear-interpolation-smoothing*, get our second model. This model use smoothing method based on reference set to give each unseen term an estimate probability. We'll evaluate the model in the later evaluation section.
+The `query_likely_model`, we use the whole furniture data as a reference language model, and by using *linear-interpolation-smoothing*, get our second model. This model use smoothing method based on reference set to give each unseen term an estimate probability. We'll evaluate the model in the later evaluation section.
 
 <h3 id='l2r'>Learning to Rank</h3>
 
@@ -124,8 +124,8 @@ IR provided us various retrieval metrics and by applying different retrieval tec
 By perform a unbias and fair evaluation, we divided the evaluation task into these small tasks.
 
 1. Choose a diverse set of ranking models, for example, `simple vsm`, `tf-idf_vsm`, `pln_vsm`, `simple_pbm`, `query_likely_pbm`, `bm25`.
-2. Have each model return top-20 documents based on each query.
-3. Combine all top-20 sets to form a *pool*.
+2. Have each model return top-10 documents based on each query.
+3. Combine all top-10 sets to form a *pool*.
 4. Record relevant result including Precision, Recall,  Precision at 10, excusion time.
 5. Process another query.
 6. Compute MAP score.
@@ -161,10 +161,14 @@ Visualize
 
 ![evaluation time](img/excursion_time.png)
 
+For evaluating our system we extracted the top 10 ranking for the queries `[chair]`,`[bookcase open shelves]`, and `[cabinet kitchen]`. The query results for each query of all the 6 different models were combined in a pooling set, containing all the unique query results. The relevance of each of the results was then judged manually by human assessors and the irrelevant documents were cross-referenced by their occurrence in the original query result per model. The precision per model was counted after the evaluation and are presented below.
+
+| query                         | simple | tfidf | pln  | bm25 | unigram | querylikely |
+| ----------------------------- | ------ | ----- | ---- | ---- | ------- | ----------- |
+| chair                         | 0.7    | 0.7   | 0.8  | 0.8  | 0.7     | 0.9         |
+| bookcase open shelves         | 0.9    | 0.9   | 1    | 0.9  | 0.9     | 0.8         |
+| cabinet kitchen               | 0.8    | 1     |.9    |   1  |   1     |    .8       |
+
 <h2 id='future'>Future</h2>
 
 <h2 id='reference'>Reference</h2>
-
-1.Singhal A, Buckley C, Mitra M. Pivoted document length normalization[C]//Proceedings of the 19th annual international ACM SIGIR conference on Research and development in information retrieval. ACM, 1996: 21-29.
-
-2.Robertson S E, Walker S. Some simple effective approximations to the 2-poisson model for probabilistic weighted retrieval[C]//Proceedings of the 17th annual international ACM SIGIR conference on Research and development in information retrieval. Springer-Verlag New York, Inc., 1994: 232-241.
