@@ -167,7 +167,7 @@ For evaluating our system we extracted the top 10 ranking for the queries `[chai
 | ----------------------------- | ------ | ----- | ---- | ---- | ------- | ----------- |
 | chair                         | 0.7    | 0.7   | 0.8  | 0.8  | 0.7     | 0.9         |
 | bookcase open shelves         | 0.9    | 0.9   | 1    | 0.9  | 0.9     | 0.8         |
-| cabinet kitchen               | 0.8    | 1     |.9    |   1  |   1     |    .8       |
+| cabinet kitchen               | 0.8    | 1     | 0.9  |   1  |   1     |    0.8      |
 
 <h2 id='future'>Future</h2>
 
