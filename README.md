@@ -126,7 +126,7 @@ By perform a unbias and fair evaluation, we divided the evaluation task into the
 1. Choose a diverse set of ranking models, for example, `simple vsm`, `tf-idf_vsm`, `pln_vsm`, `simple_pbm`, `query_likely_pbm`, `bm25`.
 2. Have each model return top-10 documents based on each query.
 3. Combine all top-10 sets to form a *pool*.
-4. Record relevant result including Precision at 10, excursion time.
+4. Record relevant result including Precision@10 and excursion time.
 5. Process another query.
 6. Compute MAP score.
 
@@ -154,12 +154,10 @@ By perform a unbias and fair evaluation, we divided the evaluation task into the
 | sofa comfortable              | 1.16   | 2.61  | 2.23 | 1.79 | 0.40    | 1.71        |
 | cabinet kitchen               | 0.90   | 1.99  | 1.89 | 1.35 | 0.15    | 1.92        |
 | cabinet dinerware             | 0.74   | 1.90  | 1.13 | 0.85 | 0.12    | 1.35        |
-
 *Table showing the time in seconds for retrieving the 30 ranked results for a query per model*
 
-Visualize
-
 ![evaluation time](img/excursion_time.png)
+*Figure showing the performance of each model in excursion time in seconds per query*
 
 For evaluating our system we extracted the top 10 ranking for the queries `[chair]`,`[bookcase open shelves]`, and `[cabinet kitchen]`. The query results of all the 6 different models for each query were combined in a pooling set, containing all the unique query results. The relevance of each of the results was then judged manually by human assessors and the irrelevant documents were cross-referenced by their occurrence in the original query result per model. The precision per model was counted after the evaluation and are presented below. 
 
@@ -180,6 +178,8 @@ The main motivation for using these performance metrics were that they are less 
 | cabinet kitchen               | 0.8    | 1     | 0.9  |   1  |   1     |    0.8      |
 | Mean Average Precision @ 10   | 0.8    | 0.87  |0.9   |0.9   |0.87     |0.83         |
 *Table showing P@10 and MAP@10 for the different models per query*
+
+After performing the evaluation the performance of each model was compared and the fastest model was the unigram model, which was expected since it is relatively less complex than the other models. However BM25 was relatively fast as well, coming second and third in most queries in lowest excursion time, and as can be seen from the precision table had the highest MAP@10 metric, together with the PLN model. As such the BM25 model is the one that was chosen as the model that was used in the final system. 
 
 <h2 id='future'>Future</h2>
 
