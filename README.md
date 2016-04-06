@@ -166,9 +166,9 @@ For evaluating the precision of our system we extracted the top 10 ranking for t
 Some problems were encountered; for example, a query for a bookcase returned an item with a comment that said that the coffee table was only ever used as a bookcase. Could this coffee table then be classified as a bookcase? This and similar ambiguous results were encountered and had to be judged by the assessor for relevance with their own judgement.
 
 The metrics that were used were the Precision@10 (*P@10*) metric and the Mean Average Precision@10 (*MAP@10*). The Precision@10 metric is used to measure the precision of a model for a query with 10 ranked results.
-$$P@10 = \frac{|\{\text{relevant documents}\}\cap\{\text{retrieved documents n;n=10}\}|}{|\{\text{retrieved documents n;n=10}\}|} $$
+![$$P@10 = \frac{|\{\text{relevant documents}\}\cap\{\text{retrieved documents n;n=10}\}|}{|\{\text{retrieved documents n;n=10}\}|} $$](img/gif.latex.gif)
 The Mean Average precision is a metric that is used to calculate the average precision of a model over multiple queries. 
-$$MAP@n = \sum\limits_{i=1}^N{p@10(i)n/N}$$
+![$$MAP@n = \sum\limits_{i=1}^N{p@10(i)n/N}$$](img/gif.latex-2.gif)
 We used this performance metric as a better indication of the overall performance of a model compared to single P@10 values.
 
 The main motivation for using these performance metrics were that they are less complex to calculate compared to recall and consequently F1-scores and as such were relatively easy to compute on a limited time scale. However, the metrics used are a valid indication of the performance of the system, since the set of returned results in our system is relatively small for each query and the precision of those returned results is high.
