@@ -114,21 +114,21 @@ So, how does a question look like on crowdflower? The worker is asked to submit 
 
 <h2 id='evaluation'>Evaluation</h2>
 
-IR provided us various retrieval metrics and by applying different retrieval techniques to Furnito, we are able to denote which model has the best performance. Our evaluation strategy includes:
+Information retrieval has several methods to denote the performance of the systems used. Using these methods our evaluation strategy includes:
 
-1. Enough relevant documents.
+1. Have enough relevant documents in both the entire document set and the retrieved documents for the models.
 2. Capture the perceived utility by users.
-3. Completeness and minimum human work.
-4. Resuable test set.
+3. Completeness and minimal human work.
+4. Reusable test set.
 
-By perform a unbias and fair evaluation, we divided the evaluation task into these small tasks.
+To perform an unbiased evaluation, the evaluation task was divided into smaller tasks.
 
 1. Choose a diverse set of ranking models, for example, `simple vsm`, `tf-idf_vsm`, `pln_vsm`, `simple_pbm`, `query_likely_pbm`, `bm25`.
-2. Have each model return top-10 documents based on each query.
+2. Have each model return top-10 documents for a query.
 3. Combine all top-10 sets to form a *pool*.
 4. Record relevant result including Precision@10 and excursion time.
 5. Process another query.
-6. Compute MAP score.
+6. Compute MAP score over all completed queries.
 
 ###Excursion Time
 
@@ -159,11 +159,12 @@ By perform a unbias and fair evaluation, we divided the evaluation task into the
 ![evaluation time](img/excursion_time.png)
 *Figure showing the performance of each model in excursion time in seconds per query*
 
-For evaluating our system we extracted the top 10 ranking for the queries `[chair]`,`[bookcase open shelves]`, and `[cabinet kitchen]`. The query results of all the 6 different models for each query were combined in a pooling set, containing all the unique query results. The relevance of each of the results was then judged manually by human assessors and the irrelevant documents were cross-referenced by their occurrence in the original query result per model. The precision per model was counted after the evaluation and are presented below. 
+###Precision and Mean Average Precision
+For evaluating the precision of our system we extracted the top 10 ranking for the queries `[chair]`,`[bookcase open shelves]`, and `[cabinet kitchen]`. The query results of all the 6 different models for each query were combined in a pooling set, containing all the unique query results. The relevance of each of the results was then judged manually by human assessors and the irrelevant documents were cross-referenced by their occurrence in the original query result per model. The precision per model was counted after the evaluation and are presented below. 
 
 Some problems were encountered; for example, a query for a bookcase returned an item with a comment that said that the coffee table was only ever used as a bookcase. Could this coffee table then be classified as a bookcase? This and similar ambiguous results were encountered and had to be judged by the assessor for relevance with their own judgement.
 
-The precise metrics that were used were the Precision@10 (*P@10*) metric and the Mean Average Precision@10 (*MAP@10*). The Precision@10 metric is used to measure the precision of a model for a query with 10 ranked results.
+The metrics that were used were the Precision@10 (*P@10*) metric and the Mean Average Precision@10 (*MAP@10*). The Precision@10 metric is used to measure the precision of a model for a query with 10 ranked results.
 $$P@10 = \frac{|\{\text{relevant documents}\}\cap\{\text{retrieved documents n;n=10}\}|}{|\{\text{retrieved documents n;n=10}\}|} $$
 The Mean Average precision is a metric that is used to calculate the average precision of a model over multiple queries. 
 $$MAP@n = \sum\limits_{i=1}^N{p@10(i)n/N}$$
@@ -179,6 +180,7 @@ The main motivation for using these performance metrics were that they are less 
 | Mean Average Precision @ 10   | 0.8    | 0.87  |0.9   |0.9   |0.87     |0.83         |
 *Table showing P@10 and MAP@10 for the different models per query*
 
+###Evaluation Conclusion
 After performing the evaluation the performance of each model was compared and the fastest model was the unigram model, which was expected since it is relatively less complex than the other models. However BM25 was relatively fast as well, coming second and third in most queries in lowest excursion time, and as can be seen from the precision table had the highest MAP@10 metric, together with the PLN model. As such the BM25 model is the one that was chosen as the model that was used in the final system. 
 
 <h2 id='future'>Future</h2>
