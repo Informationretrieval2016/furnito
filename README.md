@@ -126,7 +126,7 @@ By perform a unbias and fair evaluation, we divided the evaluation task into the
 1. Choose a diverse set of ranking models, for example, `simple vsm`, `tf-idf_vsm`, `pln_vsm`, `simple_pbm`, `query_likely_pbm`, `bm25`.
 2. Have each model return top-10 documents based on each query.
 3. Combine all top-10 sets to form a *pool*.
-4. Record relevant result including Precision, Recall,  Precision at 10, excursion time.
+4. Record relevant result including Precision at 10, excursion time.
 5. Process another query.
 6. Compute MAP score.
 
@@ -155,26 +155,31 @@ By perform a unbias and fair evaluation, we divided the evaluation task into the
 | cabinet kitchen               | 0.90   | 1.99  | 1.89 | 1.35 | 0.15    | 1.92        |
 | cabinet dinerware             | 0.74   | 1.90  | 1.13 | 0.85 | 0.12    | 1.35        |
 
-*seconds*
+*Table showing the time in seconds for retrieving the 30 ranked results for a query per model*
 
 Visualize
 
 ![evaluation time](img/excursion_time.png)
 
-For evaluating our system we extracted the top 10 ranking for the queries `[chair]`,`[bookcase open shelves]`, and `[cabinet kitchen]`. The query results for each query of all the 6 different models were combined in a pooling set, containing all the unique query results. The relevance of each of the results was then judged manually by human assessors and the irrelevant documents were cross-referenced by their occurrence in the original query result per model. The precision per model was counted after the evaluation and are presented below.
+For evaluating our system we extracted the top 10 ranking for the queries `[chair]`,`[bookcase open shelves]`, and `[cabinet kitchen]`. The query results of all the 6 different models for each query were combined in a pooling set, containing all the unique query results. The relevance of each of the results was then judged manually by human assessors and the irrelevant documents were cross-referenced by their occurrence in the original query result per model. The precision per model was counted after the evaluation and are presented below. 
 
-TODO: EXPAND
-P@10 metric
-MAP
-RECALL (?)
+Some problems were encountered; for example, a query for a bookcase returned an item with a comment that said that the coffee table was only ever used as a bookcase. Could this coffee table then be classified as a bookcase? This and similar ambiguous results were encountered and had to be judged by the assessor for relevance with their own judgement.
+
+The precise metrics that were used were the Precision@10 (*P@10*) metric and the Mean Average Precision@10 (*MAP@10*). The Precision@10 metric is used to measure the precision of a model for a query with 10 ranked results.
+$$P@10 = \frac{|\{\text{relevant documents}\}\cap\{\text{retrieved documents n;n=10}\}|}{|\{\text{retrieved documents n;n=10}\}|} $$
+The Mean Average precision is a metric that is used to calculate the average precision of a model over multiple queries. 
+$$MAP@n = \sum\limits_{i=1}^N{p@10(i)n/N}$$
+We used this performance metric as a better indication of the overall performance of a model compared to single P@10 values.
+
+The main motivation for using these performance metrics were that they are less complex to calculate compared to recall and consequently F1-scores and as such were relatively easy to compute on a limited time scale. However, the metrics used are a valid indication of the performance of the system, since the users of the system overall have a subjective information need.
 
 | query                         | simple | tfidf | pln  | bm25 | unigram | querylikely |
 | ----------------------------- | ------ | ----- | ---- | ---- | ------- | ----------- |
 | chair                         | 0.7    | 0.7   | 0.8  | 0.8  | 0.7     | 0.9         |
 | bookcase open shelves         | 0.9    | 0.9   | 1    | 0.9  | 0.9     | 0.8         |
 | cabinet kitchen               | 0.8    | 1     | 0.9  |   1  |   1     |    0.8      |
-| Mean Average Precision @ 10   |0.8     |0.87   |0.9   |0.9   |0.87     |0.83         |
-*Table showing the P@10 precision metric for the different models per query*
+| Mean Average Precision @ 10   | 0.8    | 0.87  |0.9   |0.9   |0.87     |0.83         |
+*Table showing P@10 and MAP@10 for the different models per query*
 
 <h2 id='future'>Future</h2>
 
