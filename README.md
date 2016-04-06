@@ -167,6 +167,7 @@ Some problems were encountered; for example, a query for a bookcase returned an 
 
 The metrics that were used were the Precision@10 (*P@10*) metric and the Mean Average Precision@10 (*MAP@10*). The Precision@10 metric is used to measure the precision of a model for a query with 10 ranked results.
 ![$$P@10 = \frac{|\{\text{relevant documents}\}\cap\{\text{retrieved documents n;n=10}\}|}{|\{\text{retrieved documents n;n=10}\}|} $$](img/gif.latex.gif)
+
 The Mean Average precision is a metric that is used to calculate the average precision of a model over multiple queries. 
 ![$$MAP@n = \sum\limits_{i=1}^N{p@10(i)n/N}$$](img/gif.latex-2.gif)
 We used this performance metric as a better indication of the overall performance of a model compared to single P@10 values.
