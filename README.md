@@ -170,6 +170,7 @@ The metrics that were used were the Precision@10 (*P@10*) metric and the Mean Av
 
 The Mean Average precision is a metric that is used to calculate the average precision of a model over multiple queries. 
 ![$$MAP@n = \sum\limits_{i=1}^N{p@10(i)n/N}$$](img/gif.latex-2.gif)
+
 We used this performance metric as a better indication of the overall performance of a model compared to single P@10 values.
 
 The main motivation for using these performance metrics were that they are less complex to calculate compared to recall and consequently F1-scores and as such were relatively easy to compute on a limited time scale. However, the metrics used are a valid indication of the performance of the system, since the set of returned results in our system is relatively small for each query and the precision of those returned results is high.
