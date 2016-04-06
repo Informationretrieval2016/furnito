@@ -157,6 +157,7 @@ To perform an unbiased evaluation, the evaluation task was divided into smaller 
 *Table showing the time in seconds for retrieving the 30 ranked results for a query per model*
 
 ![evaluation time](img/excursion_time.png)
+
 *Figure showing the performance of each model in excursion time in seconds per query*
 
 ###Precision and Mean Average Precision
@@ -178,6 +179,7 @@ The main motivation for using these performance metrics were that they are less 
 | bookcase open shelves         | 0.9    | 0.9   | 1    | 0.9  | 0.9     | 0.8         |
 | cabinet kitchen               | 0.8    | 1     | 0.9  |   1  |   1     |    0.8      |
 | Mean Average Precision @ 10   | 0.8    | 0.87  |0.9   |0.9   |0.87     |0.83         |
+
 *Table showing P@10 and MAP@10 for the different models per query*
 
 ###Evaluation Conclusion
